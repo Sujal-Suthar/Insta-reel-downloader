@@ -1,0 +1,1797 @@
+/* =========================================================
+   REELDOWN — NEXT LEVEL PREMIUM CSS
+   Replace your existing style.css with this file
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+
+    color: #ffffff;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(140, 82, 255, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(255, 61, 129, 0.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(92, 157, 255, 0.12),
+            transparent 35%
+        ),
+        #080811;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   ANIMATED BACKGROUND
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 500px;
+
+    top: -180px;
+
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(140, 82, 255, 0.16),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    animation:
+        floatingOrb 12s ease-in-out infinite alternate;
+
+    z-index: -1;
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+
+    height: 450px;
+
+    right: -160px;
+
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 61, 129, 0.13),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    animation:
+        floatingOrbTwo 15s ease-in-out infinite alternate;
+
+    z-index: -1;
+}
+
+
+@keyframes floatingOrb {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(100px, 80px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(30px, 180px) scale(0.9);
+    }
+
+}
+
+
+@keyframes floatingOrbTwo {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-100px, -80px) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-40px, -150px) scale(0.9);
+    }
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    width: 100%;
+
+    padding: 22px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(8, 8, 17, 0.65);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.07);
+
+    animation:
+        navbarAppear 0.8s ease;
+}
+
+
+@keyframes navbarAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    font-size: 29px;
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+
+.logo span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3d81,
+            #b04cff,
+            #5c9dff,
+            #ff3d81
+        );
+
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        gradientMove 5s linear infinite;
+}
+
+
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 300% 50%;
+    }
+
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.navbar nav {
+
+    display: flex;
+
+    gap: 35px;
+}
+
+
+.navbar nav a {
+
+    color: #aaaab9;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    position: relative;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.navbar nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 2px;
+
+    left: 50%;
+
+    bottom: -8px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3d81,
+            #8c52ff
+        );
+
+    border-radius: 20px;
+
+    transition:
+        width 0.3s ease;
+}
+
+
+.navbar nav a:hover {
+
+    color: #ffffff;
+}
+
+
+.navbar nav a:hover::after {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 720px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+        100px 20px 120px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        70px 70px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+
+    width: 100%;
+
+    max-width: 950px;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        heroAppear 1s cubic-bezier(.2,.8,.2,1);
+}
+
+
+@keyframes heroAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        9px 18px;
+
+    border-radius: 999px;
+
+    color: #d8caff;
+
+    background:
+        rgba(255,255,255,0.055);
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 0 30px rgba(140,82,255,0.08);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 28px;
+
+    backdrop-filter:
+        blur(15px);
+
+    animation:
+        badgeFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes badgeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero h1 {
+
+    font-size:
+        clamp(50px, 8vw, 92px);
+
+    line-height: 0.98;
+
+    letter-spacing: -4px;
+
+    font-weight: 900;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 15px 60px rgba(0,0,0,0.3);
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3d81,
+            #b34cff,
+            #6c7cff,
+            #ff3d81
+        );
+
+    background-size:
+        300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        gradientMove 6s linear infinite;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero p {
+
+    color: #9d9dac;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    max-width: 680px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   DOWNLOAD BOX
+========================================================= */
+
+.download-box {
+
+    position: relative;
+
+    max-width: 800px;
+
+    margin:
+        42px auto 14px;
+
+    padding: 7px;
+
+    display: flex;
+
+    align-items: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.035)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,0.35),
+        inset 0 1px rgba(255,255,255,0.08);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+
+    animation:
+        boxAppear 1.2s ease;
+}
+
+
+@keyframes boxAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.download-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -1px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(180,76,255,0.4),
+            transparent
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.4s ease;
+}
+
+
+.download-box:focus-within {
+
+    border-color:
+        rgba(179,76,255,0.45);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.45),
+        0 0 40px rgba(140,82,255,0.12);
+}
+
+
+.download-box:focus-within::before {
+
+    opacity: 1;
+
+    animation:
+        borderSweep 2s linear infinite;
+}
+
+
+@keyframes borderSweep {
+
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.download-box input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    border: none;
+
+    outline: none;
+
+    background:
+        transparent;
+
+    color: #ffffff;
+
+    padding:
+        18px 20px;
+
+    font-size: 16px;
+
+    font-weight: 500;
+}
+
+
+.download-box input::placeholder {
+
+    color: #686875;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.download-box input:focus::placeholder {
+
+    color: #4f4f5c;
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.download-box button {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    padding:
+        17px 30px;
+
+    min-width: 135px;
+
+    border-radius: 15px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3d81,
+            #a149ff
+        );
+
+    box-shadow:
+        0 10px 30px rgba(161,73,255,0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.download-box button::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 70%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.35),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left 0.6s ease;
+}
+
+
+.download-box button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 40px rgba(161,73,255,0.4);
+}
+
+
+.download-box button:hover::before {
+
+    left: 150%;
+}
+
+
+.download-box button:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+.download-box button:disabled {
+
+    cursor: wait;
+
+    opacity: 0.7;
+
+    transform: none;
+
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+#message {
+
+    min-height: 24px;
+
+    margin-top: 12px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.message-error {
+
+    color: #ff7188 !important;
+
+    animation:
+        shake 0.4s ease;
+}
+
+
+.message-success {
+
+    color: #65e6a4 !important;
+
+    animation:
+        successPop 0.45s ease;
+}
+
+
+.message-loading {
+
+    color: #a9a9b8 !important;
+}
+
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-6px);
+    }
+
+    75% {
+        transform: translateX(6px);
+    }
+
+}
+
+
+@keyframes successPop {
+
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 70px;
+
+    margin-top: 48px;
+
+    animation:
+        featuresAppear 1.4s ease;
+}
+
+
+@keyframes featuresAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #9696a6;
+
+    font-size: 15px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.feature:hover {
+
+    color: #ffffff;
+
+    transform:
+        translateY(-4px);
+}
+
+
+.feature span {
+
+    font-size: 21px;
+
+    filter:
+        drop-shadow(
+            0 5px 15px rgba(255,255,255,0.12)
+        );
+}
+
+
+/* =========================================================
+   LOADING CONTAINER
+========================================================= */
+
+.loading-container {
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 30px auto;
+
+    color: #9999a9;
+
+    animation:
+        fadeIn 0.3s ease;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   PREMIUM SPINNER
+========================================================= */
+
+.spinner {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    border:
+        3px solid rgba(255,255,255,0.08);
+
+    border-top-color:
+        #ff3d81;
+
+    border-right-color:
+        #8c52ff;
+
+    animation:
+        premiumSpin 0.8s linear infinite;
+
+    box-shadow:
+        0 0 25px rgba(140,82,255,0.2);
+}
+
+
+.spinner::after {
+
+    content: "";
+
+    position: absolute;
+}
+
+
+@keyframes premiumSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   PREVIEW CARD
+========================================================= */
+
+.preview-card {
+
+    display: none;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 38px auto 0;
+
+    overflow: hidden;
+
+    position: relative;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.09),
+            rgba(255,255,255,0.035)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.4);
+
+    text-align: left;
+
+    animation:
+        previewAppear 0.7s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+@keyframes previewAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   PREVIEW IMAGE
+========================================================= */
+
+.preview-image-container {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background:
+        #11111b;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.preview-image-container::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.4),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+
+.preview-image-container img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.preview-card:hover
+.preview-image-container img {
+
+    transform:
+        scale(1.04);
+}
+
+
+/* =========================================================
+   PREVIEW INFO
+========================================================= */
+
+.preview-info {
+
+    padding: 27px;
+}
+
+
+.preview-info h3 {
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+
+.preview-info p {
+
+    color: #9696a5;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 21px;
+}
+
+
+/* =========================================================
+   REAL DOWNLOAD BUTTON
+========================================================= */
+
+.real-download-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        14px 23px;
+
+    border-radius: 13px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    font-size: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3d81,
+            #824cff
+        );
+
+    box-shadow:
+        0 12px 30px rgba(130,76,255,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.real-download-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 40px rgba(130,76,255,0.4);
+}
+
+
+.real-download-btn:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+.real-download-btn.disabled {
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.how {
+
+    padding:
+        120px 8%;
+
+    text-align: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,255,255,0.018),
+            transparent
+        );
+}
+
+
+.how h2,
+.about h2 {
+
+    font-size:
+        clamp(35px, 5vw, 50px);
+
+    letter-spacing:
+        -2px;
+
+    font-weight: 900;
+
+    margin-bottom: 14px;
+}
+
+
+.section-description {
+
+    color: #858593;
+
+    margin-bottom: 60px;
+}
+
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.steps {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.step-card {
+
+    padding: 35px;
+
+    min-height: 230px;
+
+    border-radius: 22px;
+
+    text-align: left;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.step-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+
+    height: 160px;
+
+    right: -80px;
+
+    top: -80px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(140,82,255,0.12);
+
+    filter: blur(20px);
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.step-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(180,76,255,0.3);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.3);
+}
+
+
+.step-card:hover::before {
+
+    transform:
+        scale(1.5);
+}
+
+
+.step-number {
+
+    color: #a783ff;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+
+.step-card h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 13px;
+}
+
+
+.step-card p {
+
+    color: #858592;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+
+    padding:
+        120px 20px;
+
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+.about p {
+
+    color: #858592;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        35px 20px;
+
+    text-align: center;
+
+    color: #60606d;
+
+    font-size: 13px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.06);
+
+    background:
+        rgba(0,0,0,0.15);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        #080811;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            #ff3d81,
+            #824cff
+        );
+
+    border-radius:
+        20px;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+
+    background:
+        rgba(140,82,255,0.4);
+
+    color:
+        #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .steps {
+
+        grid-template-columns:
+            1fr;
+
+        max-width: 600px;
+    }
+
+
+    .features {
+
+        gap: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+
+        padding:
+            18px 5%;
+    }
+
+
+    .navbar nav {
+
+        display: none;
+    }
+
+
+    .logo {
+
+        font-size: 25px;
+    }
+
+
+    .hero {
+
+        min-height: 680px;
+
+        padding:
+            70px 15px 90px;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(45px, 14vw, 65px);
+
+        letter-spacing:
+            -2.5px;
+    }
+
+
+    .hero p {
+
+        font-size:
+            15px;
+    }
+
+
+    .download-box {
+
+        flex-direction:
+            column;
+
+        padding:
+            7px;
+
+        border-radius:
+            17px;
+
+        background:
+            transparent;
+
+        border:
+            none;
+
+        box-shadow:
+            none;
+
+        backdrop-filter:
+            none;
+    }
+
+
+    .download-box input {
+
+        width: 100%;
+
+        border-radius:
+            15px;
+
+        background:
+            rgba(255,255,255,0.06);
+
+        border:
+            1px solid rgba(255,255,255,0.1);
+
+        padding:
+            18px;
+    }
+
+
+    .download-box button {
+
+        width: 100%;
+
+        min-height:
+            55px;
+    }
+
+
+    .features {
+
+        flex-direction:
+            column;
+
+        gap:
+            17px;
+
+        align-items:
+            center;
+    }
+
+
+    .preview-card {
+
+        border-radius:
+            19px;
+    }
+
+
+    .preview-info {
+
+        padding:
+            22px;
+    }
+
+
+    .real-download-btn {
+
+        width:
+            100%;
+    }
+
+
+    .how {
+
+        padding:
+            90px 20px;
+    }
+
+
+    .step-card {
+
+        padding:
+            27px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
