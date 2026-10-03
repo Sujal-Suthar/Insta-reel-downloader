@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template, request, jsonify, send_file
+from flask import Flask, render_template, request, jsonify, send_file, send_from_directory
 import yt_dlp
 import os
 import uuid
@@ -179,6 +179,15 @@ def find_downloaded_file(file_id):
 def home():
 
     return render_template("index.html")
+
+@app.route("/robots.txt")
+def robots_txt():
+    return send_from_directory(".", "robots.txt")
+
+
+@app.route("/sitemap.xml")
+def sitemap_xml():
+    return send_from_directory(".", "sitemap.xml")
 
 
 # =========================================================

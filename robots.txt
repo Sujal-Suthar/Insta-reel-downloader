@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://insta-reel-downloader-vhyn.onrender.com/sitemap.xml
